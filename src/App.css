@@ -29,7 +29,7 @@ html {
   scroll-padding-top: 75px;
 }
 
-.body {
+body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
@@ -56,9 +56,33 @@ a:hover {
   height: auto;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 button {
   border: 0;
   background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+  main .container {
+    max-width: 100%;
+    padding: 0 150px;
+  }
+}
+
+p.success {
+  color: green;
+}
+
+p.danger {
+  color: red;
 }
 
 /*Navbar CSS*/
@@ -68,7 +92,7 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition: .32 ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 nav.navbar.scrolled {
@@ -181,13 +205,13 @@ span.navbar-text {
   position: absolute;
 }
 
-nav.navbar .navber-toggler:active,
-nav.navbar .navber-toggler:focus {
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
   outline: none;
   box-shadow: none;
 }
 
-nav.navbar .navber-toggler-icon {
+nav.navbar .navbar-toggler-icon {
   width: 24px;
   height: 17px;
   background-image: none;
@@ -197,12 +221,12 @@ nav.navbar .navber-toggler-icon {
   top: -2px;
 }
 
-nav.navbar .navber-toggler:focus {
+nav.navbar .navbar-toggler:focus {
   border-bottom: 2px solid #fff;
 }
 
-nav.navbar .navber-toggler-icon::after,
-nav.navbar .navber-toggler-icon::before {
+nav.navbar .navbar-toggler-icon::after,
+nav.navbar .navbar-toggler-icon::before {
   width: 24px;
   position: absolute;
   height: 2px;
@@ -214,18 +238,104 @@ nav.navbar .navber-toggler-icon::before {
   transition: all 300ms linear;
 }
 
-nav.navbar .navbar-toggler[aria-expanded='true'] .navber-toggler-icon::after {
+nav.navbar .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon::after {
   transform: rotate(45deg);
   background-color: #fff;
   height: 2px;
 }
 
-nav.navbar .navbar-toggler[aria-expanded='true'] .navber-toggler-icon::before {
+nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon::before {
   transform: translateY(8px) rotate(-45deg);
   background-color: #fff;
   height: 2px;
 }
 
-nav.navbar .navbar-toggler[aria-expanded='true'] .navber-toggler-icon {
+nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   background-color: transparent;
+}
+
+/* Banner CSS */
+
+.banner {
+  margin-top: 0;
+  padding: 260px 0 100px 0;
+  background-image: url('./assets/img/banner-bg.png');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: .8px;
+  padding: 8px 10px;
+  background: linear-gradient(90deg rgba(170, 54, 124, .5) -6% rgba(74, 47, 189, .5) 112%);
+  border: 1px solid rgba(255, 255, 255, .5);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner p {
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: .8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+
+.banner button {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 60px;
+  letter-spacing: .8px;
+  display: flex;
+  align-items: center;
+}
+
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: .3s ease-in-out;
+  line-height: 1;
+}
+
+.banner button:hover svg {
+  margin-left: 25px;
+}
+
+.banner img {
+  animation: updown 3s linear infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.txt-rotate>.wrap {
+  border-right: .08em solid #666;
 }
