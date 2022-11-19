@@ -25,17 +25,17 @@ export const Projects = () => {
         {
             title: 'Business Startup',
             description: 'Design & Development',
+            imgUrl: projImg2,
+        },
+        {
+            title: 'Business Startup',
+            description: 'Design & Development',
+            imgUrl: projImg3,
+        },
+        {
+            title: 'Business Startup',
+            description: 'Design & Development',
             imgUrl: projImg1,
-        },
-        {
-            title: 'Business Startup',
-            description: 'Design & Development',
-            imgUrl: projImg3,
-        },
-        {
-            title: 'Business Startup',
-            description: 'Design & Development',
-            imgUrl: projImg3,
         },
     ]
 
@@ -73,8 +73,8 @@ export const Projects = () => {
                                         }
                                     </Row>
                                 </Tab.Pane>
-                                <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
-                                <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
+                                <Tab.Pane eventKey="second"><p>Lorem Ipsum</p></Tab.Pane>
+                                <Tab.Pane eventKey="third"><p>Lorem Ipsum</p></Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>
                     </Col>
