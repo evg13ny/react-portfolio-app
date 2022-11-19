@@ -29,25 +29,26 @@ export const Contact = () => {
         let response = await fetch('http://localhost:3000/contact', {
             method: 'POST',
             headers: {
-                'Content-Type': 'Application/json;charset=utf-8'
+                'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(formDetails)
         })
+
         setButtonText('Send')
 
-        let result = response.json()
+        let result = await response.json()
 
         setFormDetails(formInitialDetails)
 
         if (result.code === 200) {
-            setStatus({ success: true, message: 'Messafe sent successfully' })
+            setStatus({ success: true, message: 'Message was sent successfully' })
         } else {
-            setStatus({ success: false, message: 'Smth went wrong. Please Try again.' })
+            setStatus({ success: false, message: 'Smth went wrong. Please try again.' })
         }
     }
 
     return (
-        <section className="connect" id="connect">
+        <section className="contact" id="connect">
             <Container>
                 <Row className="align-items-center">
                     <Col md={6}>
@@ -75,7 +76,7 @@ export const Contact = () => {
                                 </Col>
 
                                 <Col>
-                                    <textarea row="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)} />
+                                    <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)} />
                                     <button type="submit"><span>{buttonText}</span></button>
                                 </Col>
 
