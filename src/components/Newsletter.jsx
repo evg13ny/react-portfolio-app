@@ -1,4 +1,3 @@
-import e from "cors"
 import { useEffect, useState } from "react"
 import { Alert, Col, Row } from "react-bootstrap"
 
@@ -12,10 +11,10 @@ export const NewsLetter = ({ onValidated, status, message }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         email &&
-            email.indexOf('@') > -1 &&
-            onValidated({
-                EMAIL: email
-            })
+        email.indexOf('@') > -1 &&
+        onValidated({
+            EMAIL: email
+        })
     }
 
     const clearFields = () => {
