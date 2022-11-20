@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { ArrowRightCircle } from "react-bootstrap-icons"
+import TrackVisibility from 'react-on-screen'
+import 'animate.css'
 import headerImg from "../assets/img/header-img.svg"
 
 export const Banner = () => {
@@ -43,10 +45,17 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <span className="tagline">Welcome to my portfolio</span>
-                        <h1>{`Hi I'm evg13ny `}<span className="wrap">{text}</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste praesentium repellendus nesciunt impedit animi porro dolorem. Ipsam non rerum soluta?</p>
-                        <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25} /></button>
+                        <TrackVisibility>
+                            {
+                                ({ isVisible }) =>
+                                    <div className={isVisible ? 'animate__animated animate__bounce' : ''}>
+                                        <span className="tagline">Welcome to my portfolio</span>
+                                        <h1>{`Hi I'm evg13ny `}<span className="wrap">{text}</span></h1>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste praesentium repellendus nesciunt impedit animi porro dolorem. Ipsam non rerum soluta?</p>
+                                        <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25} /></button>
+                                    </div>
+                            }
+                        </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header Img" />
